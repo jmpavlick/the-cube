@@ -24,3 +24,8 @@ Tech demo:
 # Running
 
 - `pnpm vdev`
+
+# Summon `THE CUBE`:
+
+- On an iOS device, visit https://the-cube-blond.vercel.app/
+- Summon `THE CUBE`.

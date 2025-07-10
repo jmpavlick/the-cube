@@ -2,9 +2,11 @@
   "name": "elm-pages-app",
   "type": "module",
   "scripts": {
-    "postinstall": "elm-tooling install"
+    "postinstall": "elm-tooling install",
+    "vdev": "concurrently \"vercel dev --local-config ./vercel.dev.json\" \"elm-pages dev\""
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "dotenv": "^17.2.0",
     "elm-codegen": "^0.6.1",
     "elm-optimize-level-2": "^0.3.5",

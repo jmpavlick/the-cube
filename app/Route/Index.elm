@@ -80,8 +80,8 @@ view app shared =
     { title = "cube cube cube cube cube"
     , body =
         [ Html.h1 [] [ Html.code [] [ Html.text "THE CUBE" ] ]
-        , Html.p []
-            [ Html.a [ Attr.href "/theCube.usdz", Attr.rel "ar" ] [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
-            ]
+        , Html.button
+            [ Attr.href "/theCube.usdz", Attr.rel "ar" ]
+            [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
         ]
     }

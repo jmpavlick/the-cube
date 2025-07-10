@@ -1,0 +1,6 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "buildCommand": "elm-pages build",
+    "framework": "null",
+    "devCommand": "elm-pages dev"
+}

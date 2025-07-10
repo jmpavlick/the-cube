@@ -2,9 +2,7 @@
   "name": "elm-pages-app",
   "type": "module",
   "scripts": {
-    "postinstall": "elm-tooling install",
-    "start": "elm-pages dev",
-    "build": "elm-pages build"
+    "postinstall": "elm-tooling install"
   },
   "devDependencies": {
     "dotenv": "^17.2.0",

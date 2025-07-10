@@ -1,0 +1,39 @@
+{
+  "elmJsonPath": "elm.json",
+  "requireElmHome": false,
+  "sideloads": [
+    {
+      "originalPackageName": "elm/virtual-dom",
+      "originalPackageVersion": "1.0.3",
+      "sideloadedPackage": {
+        "type": "github",
+        "url": "https://github.com/lydell/virtual-dom",
+        "pinTo": {
+          "sha": "4163ad89613a6da9f29d7a9240f08fcc471d6cf5"
+        }
+      }
+    },
+    {
+      "originalPackageName": "elm/html",
+      "originalPackageVersion": "1.0.0",
+      "sideloadedPackage": {
+        "type": "github",
+        "url": "https://github.com/lydell/html",
+        "pinTo": {
+          "sha": "09257799949d6ef28756b1f03794acb0bab3af7f"
+        }
+      }
+    },
+    {
+      "originalPackageName": "elm/browser",
+      "originalPackageVersion": "1.0.2",
+      "sideloadedPackage": {
+        "type": "github",
+        "url": "https://github.com/lydell/browser",
+        "pinTo": {
+          "sha": "0fae3c5fba0c7c61524b6c9774a2164d23bc3f6d"
+        }
+      }
+    }
+  ]
+}

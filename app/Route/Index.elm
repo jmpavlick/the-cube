@@ -88,8 +88,8 @@ view app shared =
     , body =
         [ Html.h1 [] [ Html.code [] [ Html.text "THE CUBE" ] ]
         , Html.div []
-            [ Html.button
-                [ Attr.href "/theCube.usdz", Attr.rel "ar" ]
+            [ Html.a
+                [ Attr.href "/theCube.usdz", Attr.rel "ar", Attr.type_ "button" ]
                 [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
             ]
         , Html.div []

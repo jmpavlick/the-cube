@@ -5,12 +5,13 @@ import FatalError exposing (FatalError)
 import Head
 import Head.Seo as Seo
 import Html
+import Html.Attributes as Attr
 import Pages.Url
 import PagesMsg exposing (PagesMsg)
-import UrlPath
 import Route
 import RouteBuilder exposing (App, StatelessRoute)
 import Shared
+import UrlPath
 import View exposing (View)
 
 
@@ -76,13 +77,11 @@ view :
     -> Shared.Model
     -> View (PagesMsg Msg)
 view app shared =
-    { title = "elm-pages is running"
+    { title = "cube cube cube cube cube"
     , body =
-        [ Html.h1 [] [ Html.text "elm-pages is up and running!" ]
+        [ Html.h1 [] [ Html.code [] [ Html.text "THE CUBE" ] ]
         , Html.p []
-            [ Html.text <| "The message is: " ++ app.data.message
+            [ Html.a [ Attr.href "/theCube.usdz", Attr.rel "ar" ] [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
             ]
-        , Route.Blog__Slug_ { slug = "hello" }
-            |> Route.link [] [ Html.text "My blog post" ]
         ]
     }

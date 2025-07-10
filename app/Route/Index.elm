@@ -93,7 +93,7 @@ view app shared =
                 [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
             ]
         , Html.div []
-            [ Html.a [ Attr.href (app.data.vercelFnUrlPrefix ++ "/hello") ] [ Html.text "Run a Vercel Serverless function" ]
+            [ Html.a [ Attr.href (app.data.vercelFnUrlPrefix ++ "/hello") ] [ Html.text "Click here to run a Vercel Serverless function" ]
             ]
         ]
     }

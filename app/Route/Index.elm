@@ -1,6 +1,7 @@
 module Route.Index exposing (ActionData, Data, Model, Msg, route)
 
 import BackendTask exposing (BackendTask)
+import BackendTask.Env
 import FatalError exposing (FatalError)
 import Head
 import Head.Seo as Seo
@@ -28,7 +29,7 @@ type alias RouteParams =
 
 
 type alias Data =
-    { message : String
+    { vercelFnUrlPrefix : String
     }
 
 
@@ -49,7 +50,13 @@ data : BackendTask FatalError Data
 data =
     BackendTask.succeed Data
         |> BackendTask.andMap
-            (BackendTask.succeed "Hello!")
+            vercelServerlessFunctionUrlPrefix
+
+
+vercelServerlessFunctionUrlPrefix : BackendTask err String
+vercelServerlessFunctionUrlPrefix =
+    BackendTask.map (\envVar -> Maybe.withDefault "" envVar ++ "/api") <|
+        BackendTask.Env.get "OPTIONAL_VERCEL_SERVERLESS_FN_OVERRIDE_URL"
 
 
 head :
@@ -80,8 +87,13 @@ view app shared =
     { title = "cube cube cube cube cube"
     , body =
         [ Html.h1 [] [ Html.code [] [ Html.text "THE CUBE" ] ]
-        , Html.button
-            [ Attr.href "/theCube.usdz", Attr.rel "ar" ]
-            [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
+        , Html.div []
+            [ Html.button
+                [ Attr.href "/theCube.usdz", Attr.rel "ar" ]
+                [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
+            ]
+        , Html.div []
+            [ Html.a [ Attr.href (app.data.vercelFnUrlPrefix ++ "/hello") ] [ Html.text "Run a Vercel Serverless function" ]
+            ]
         ]
     }

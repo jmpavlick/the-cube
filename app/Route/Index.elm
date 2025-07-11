@@ -92,5 +92,8 @@ view app shared =
                 [ Attr.href "/theCube.usdz", Attr.rel "ar", Attr.type_ "button" ]
                 [ Html.text "summon ", Html.code [] [ Html.text "THE CUBE" ] ]
             ]
+        , Html.div []
+            [ Html.a [ Attr.href (app.data.vercelFnUrlPrefix ++ "/hello") ] [ Html.text "Click here to run a Vercel Serverless function" ]
+            ]
         ]
     }
